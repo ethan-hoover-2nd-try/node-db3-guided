@@ -9,6 +9,8 @@ exports.up = function(knex) {
     .createTable('posts', tbl => {
       tbl.increments();
       tbl.text('contents');
+
+      // foreign key references id in users
       tbl.integer('user_id')
         .unsigned()
         .notNullable()
